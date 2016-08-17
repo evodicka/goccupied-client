@@ -1,0 +1,11 @@
+[global]
+mode = mqtt
+
+[mqtt]
+host = "tcp://host:post"
+user = "username"
+password = "password"
+shareTopic = "topicName"
+
+[http]
+host = "http://somehost"
