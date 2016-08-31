@@ -2,7 +2,6 @@ package output
 
 import (
 	"github.com/stianeikeland/go-rpio"
-	"time"
 )
 
 var (
@@ -14,20 +13,6 @@ var (
 func InitLEDs() {
 	busyPin.Output()
 	freePin.Output()
-}
-
-// Blinks n times on the busy pin
-func Blink(times int) {
-	// Toggle pin 20 times
-	for x := 0; x < times; x++ {
-		busyPin.Toggle()
-		time.Sleep(time.Second / 5)
-	}
-}
-
-// Switches the state of GPIO10
-func ToggleBusy() {
-	busyPin.Toggle()
 }
 
 // Switches GPIO10 on

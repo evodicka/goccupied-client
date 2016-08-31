@@ -18,11 +18,6 @@ func Connect() {
 	}
 }
 
-func Publish() {
-	token := client.Publish("blubb", byte(0), false, "200")
-	token.Wait()
-}
-
 // Subscribes to the topic that contains the technical (0 and 1) occupied states and
 // calls the passed handler function
 func Subscribe(handler func(bool)) {
@@ -46,7 +41,7 @@ func createClientOptions(clientId string) *mqtt.ClientOptions {
 	opts.SetPassword(config.Mqtt.Password)
 	opts.SetClientID(clientId)
 	opts.SetKeepAlive(10 * time.Second)
-	opts.SetPingTimeout(1 * time.Second)
+	opts.SetPingTimeout(10 * time.Second)
 
 	return opts
 }

@@ -1,6 +1,8 @@
 package io
 
 const MQTT = "mqtt"
+const HTTP = "http"
+const REQUESTPATH = "/api/v1/occupied"
 
 type global struct {
 	Mode string
@@ -14,7 +16,8 @@ type mqtt struct {
 }
 
 type http struct {
-	Host string
+	Host                string
+	PollIntervalSeconds int
 }
 
 type config struct {

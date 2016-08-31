@@ -1,6 +1,9 @@
 package handler
 
-import "github.com/evodicka/goccupied-client/output"
+import (
+	"github.com/evodicka/goccupied-client/client"
+	"github.com/evodicka/goccupied-client/output"
+)
 
 // Switches the state of the LEDs, based on the occupied flag
 func SwitchState(occupied bool) {
@@ -11,4 +14,9 @@ func SwitchState(occupied bool) {
 		output.SwitchFreeOn()
 		output.SwitchBusyOff()
 	}
+}
+
+func HandlePoll() {
+	occupied := client.GetValue()
+	SwitchState(occupied)
 }

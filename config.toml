@@ -9,3 +9,4 @@ shareTopic = "topicName"
 
 [http]
 host = "http://somehost"
+pollIntervalSeconds = 10
